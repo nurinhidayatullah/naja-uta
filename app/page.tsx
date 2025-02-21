@@ -29,7 +29,7 @@ export default function Home() {
           <Carousel items={carouselItems} />
         </section>
         <section className="w-full py-12 md:py-24 lg:py-32 bg-blue-50">
-          <div className="container px-4 px-6 max-w-7xl mx-auto">
+          <div className="container px-6 max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold tracking-tighter text-blue-600 sm:text-4xl md:text-5xl mb-8">
               Featured Courses
             </h2>
