@@ -1,10 +1,18 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+export function generateStaticParams() {
+  return [
+    { slug: "Introduction%20to%20Islamic%20Studies" },
+    { slug: "Quranic%20Arabic%20for%20Beginners" },
+    { slug: "Islamic%20History" },
+  ];
+}
 
-export default function CoursePage({ params }: { params: { slug: string } }) {
+export default async function CoursePage({ params }: { params: Promise<{ slug: string }> }) {
+  const {slug} = await params;
   // In a real application, you would fetch the course details based on the slug
   const course = {
-    title: decodeURIComponent(params.slug),
+    title: decodeURIComponent(slug),
     description: "This is a detailed description of the course.",
     price: 49.99,
     type: "Online",

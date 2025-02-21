@@ -7,9 +7,9 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
-export default function EnrollPage({ params }: { params: { slug: string } }) {
+export default async function EnrollPage({ params }: { params: Promise<{ slug: string }> }) {
   const [loading, setLoading] = useState(false)
-
+  const {slug} = await params
   const handleEnroll = async (event: React.FormEvent) => {
     event.preventDefault()
     setLoading(true)
@@ -25,7 +25,7 @@ export default function EnrollPage({ params }: { params: { slug: string } }) {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-4">Enroll in {decodeURIComponent(params.slug)}</h1>
+      <h1 className="text-3xl font-bold mb-4">Enroll in {decodeURIComponent(slug)}</h1>
       <form onSubmit={handleEnroll} className="max-w-md mx-auto">
         <div className="mb-4">
           <Label htmlFor="name">Full Name</Label>
