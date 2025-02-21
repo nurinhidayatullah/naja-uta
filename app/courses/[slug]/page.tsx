@@ -2,9 +2,9 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 export function generateStaticParams() {
   return [
-    { slug: encodeURIComponent("Introduction to Islamic Studies") },
-    { slug: encodeURIComponent("Quranic Arabic for Beginners")  },
-    { slug: encodeURIComponent("Islamic History")  },
+    { slug: "Introduction to Islamic Studies" },
+    { slug: "Quranic Arabic for Beginners"  },
+    { slug: "Islamic History"  },
   ];
 }
 
